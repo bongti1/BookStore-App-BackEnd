@@ -9,7 +9,7 @@ const getBook = async (req, res) => {
     }
 };
 
-export const getBookbyId = async (req, res) => {
+const getBookbyId = async (req, res) => {
     try {
         const {id} = req.params;
         const findById = await Books.findById(id);
@@ -24,7 +24,7 @@ export const getBookbyId = async (req, res) => {
     }
 }
 
-export const newBook = async (req, res) => {
+const newBook = async (req, res) => {
     const book = req.body;
     const newBook = new Books(book);
     try {
@@ -36,7 +36,7 @@ export const newBook = async (req, res) => {
     }
 };
 
-export const updateBook = async (req, res) => {
+const updateBook = async (req, res) => {
     try {
         const {id} = req.params;
         const newBook = req.body;
@@ -53,7 +53,7 @@ export const updateBook = async (req, res) => {
     }
 };
 
-export const deleteBook = async (req, res) => {
+const deleteBook = async (req, res) => {
     try {
         const {id} = req.params;
         const deletedBook = await Books.findByIdAndDelete(id);
@@ -66,4 +66,4 @@ export const deleteBook = async (req, res) => {
     }
 };
 
-export default getBook;
+export default {getBook, getBookbyId, newBook, updateBook, deleteBook};

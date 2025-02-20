@@ -1,4 +1,4 @@
-import express, { json } from "express";
+import express from "express";
 import { connectDB } from "./config/db.mjs";
 import bookRouter from "./router/book.mjs";
 import orderRouter from "./router/order.mjs";
