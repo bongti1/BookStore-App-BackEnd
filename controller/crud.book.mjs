@@ -1,5 +1,5 @@
 import Books from "../model/book.model.mjs";
-export const getBook = async (req, res) => {
+const getBook = async (req, res) => {
     try {
         const books = await Books.find(); 
         res.status(200).send(books);
@@ -65,3 +65,5 @@ export const deleteBook = async (req, res) => {
         console.log(error);
     }
 };
+
+export default getBook;
